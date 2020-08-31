@@ -5,7 +5,6 @@ from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 import pickle
 
-app = Flask(__name__)
 ps = PorterStemmer()
 
 def text_process(mess):
@@ -16,6 +15,7 @@ def text_process(mess):
     word = " ".join(word)
     return word
 
+app = Flask(__name__)
 model = pickle.load(open("spam-message-detection.pkl", "rb"))
 
 @app.route('/')
