@@ -1,10 +1,11 @@
 from flask import Flask, render_template, jsonify, request
 import numpy as np
 import string
-from nltk.corpus import stopwords
+import nltk
 from nltk.stem import PorterStemmer
 import pickle
 
+nltk.download('stopwords')
 ps = PorterStemmer()
 
 def text_process(mess):
